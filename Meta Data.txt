@@ -1,0 +1,66 @@
+=========================================
+POWER BI PROJECT METADATA
+=========================================
+
+1. DIMENSION TABLES (Lookup & Filtering)
+-----------------------------------------
+Table: dim_date
+- Fields: date, fiscal_year, fy_month_num, month, quarters, ytd...
+- Purpose: Time intelligence and chronological filtering.
+
+Table: dim_customer
+- Fields: channel, customer, customer_code, market, platform
+- Purpose: Customer and sales channel hierarchy.
+
+Table: dim_product
+- Fields: category, division, product, product_code, segment, variant
+- Purpose: Product hierarchy and categorization.
+
+Table: dim_market
+- Fields: market, region, sub_zone
+- Purpose: Geographical and market segmentation.
+
+2. SECONDARY / REFERENCE TABLES
+-----------------------------------------
+Table: fiscal_year
+- Fields: fiscal_year, fy_desc
+
+Table: category
+- Fields: category
+
+Table: sub_zone
+- Fields: sub_zone
+
+3. PRIMARY FACT TABLES (Σ = Summable Measure)
+-----------------------------------------
+Table: fact_actuals_estima...
+- Fields: ads_promotions, customer_code, date, fiscal_year, freight_cost, gross_sales_amount (Σ), manufacturing_cost (Σ), net_invoice_sales_amount (Σ), net_sales (Σ), other_cost (Σ), other_operational_expenses
+- Notes: Core transactional table containing actuals, estimates, and multiple calculated revenue/cost metrics.
+
+Table: fact_forecast_monthly
+- Fields: customer_code, date, forecast_quantity (Σ), product_code
+- Notes: Monthly forward-looking volume targets/predictions.
+
+4. COST, EXPENSE, & DEDUCTION TABLES
+-----------------------------------------
+Table: post_invoice_deductions
+- Fields: customer_code, date, discounts_pct (Σ), other_deductions_pct (Σ), product_code
+
+Table: manufacturing_cost
+- Fields: cost_year, manufacturing_cost (Σ), product_code
+
+Table: freight_cost
+- Fields: fiscal_year, freight_pct (Σ), market, other_cost_pct (Σ)
+
+Table: Operational Expenses
+- Fields: ads_promotions_pct (Σ), fiscal_year, market, other_operational_expense_pct (Σ)
+
+5. TARGETS & MARKET SHARE TABLES
+-----------------------------------------
+Table: targets
+- Fields: gm_target (Σ), market, month, np_target (Σ), ns_target (Σ)
+- Notes: Tracks Gross Margin (gm), Net Profit (np), and Net Sales (ns) targets.
+
+Table: marketshares
+- Fields: category, fy_desc, manufacturer, sales_$ (Σ), sub_zone, total_market_sales_$ (Σ)
+- Notes: Used for calculating market penetration and competitor share.
