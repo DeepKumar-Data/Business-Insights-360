@@ -1,43 +1,31 @@
-Business Insights 360
-A comprehensive dashboard that gives executives a real-time, 360-degree view of company
-performance.
+# Business Insights 360
 
-Company Overview:
-ATLIQ Hardware is one of the fastest-growing electronics manufacturers, producing products such as PCs, mice, printers, desktops and other electronics related products.
-Initially, the company operated in only one or two countries, which made business operations relatively simple. However, as the company expanded globally, its operations became significantly more complex. 
-With expansion came challenges like managing multiple markets, customer segments, product lines, and distribution channels. This made it increasingly difficult to rely on traditional decision-making methods.”
+## Description
+A comprehensive Power BI project delivering a 360-degree visibility into the company's performance. This dashboard aggregates actuals, estimates, and target metrics across various functional domains, enabling structured, data-driven decision-making at multiple organizational levels.
 
-Problem Statement: 
-The company struggled with siloed data across departments, leading to delayed executive decision-making, poor inventory forecasting, and opaque regional P&L visibility.
+## Features
+- **Functional Views:** Dedicated interfaces for Executive, Finance, Marketing, Sales, and Supply Chain departments.
+- **Financial Tracking:** Monitoring of gross sales, net invoice sales, manufacturing costs, operational expenses, and post-invoice deductions.
+- **Target Analysis:** Direct comparison of actual performance against predefined metrics, including Gross Margin, Net Profit, and Net Sales targets.
+- **Market Share Insights:** Visibility into categorical and regional market share versus competitors.
+- **Comprehensive Data Model:** Incorporates multidimensional data (customers, products, markets, time) and robust fact tables.
 
-Objectives:
-1. Single Source of Truth-
-The company needed one centralized and reliable platform where all important business metrics could be viewed consistently.
-2. Self-Service Analytics-
-Instead of depending on technical teams every time they needed a report, business users should be able to explore insights on their own.
-3. Dynamic Monitoring-
-The dashboard should allow real-time or near-real-time tracking of business performance, enabling faster and more informed decisions. 
+## Tech Stack
+- **MySQL:** Data staging.
+- **Power Query:** ETL processing.
+- **DAX:** KPI calculations (YTD, QTD, Net Sales).
+- **Excel:** Initial data prototyping.
+- **Power BI:** Data modeling, DAX operations, and dashboard visualization.
 
-End-to-End How It Works:
-MySQL DB Extraction → Power Query Transformation → Data Modeling (Star Schema) → DAX KPI Creation → Power BI Report UI → Executive Publishing.
+## Dashboard Preview
+- **scan the QR code** OR **Click on the below link**
 
-Tools & Technologies Used:
-1. MySQL: Data staging.
-2. Power Query: ETL processing.
-3. Power BI: Visualization & Data Modeling.
-4. DAX: KPI calculations (YTD, QTD, Net Sales).
-5. Excel: Initial data prototyping.
 
-Dataset Explanation: 
-Fact tables: fact_sales_monthly, fact_forecast. 
-Dimension: tables: dim_customer, dim_product. Contains over 1M+ rows of transactional data.
+[**View Live Dashboard**](https://app.powerbi.com/view?r=eyJrIjoiYmJhZDlhMmQtNmY5NS00ZjE4LWI0MmEtNWQwZWUzYTlkYzhmIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9)
 
-Dashboard Features:
+![QR Code](Business%20Insights%20360.png)
 
-1. Clean, interactive visuals for quick decision-making.
-2. Dynamic filters and slicers for personalized views.
-3. KPI Cards & Trend Charts for performance tracking.
-4. Filter Panel Toggle: A collapsible filter pane activated via a Filter Button.
-5. Responsive Visuals: Charts and visuals update in real-time based on filter selections. 
-6. Drill-throughs & Bookmarks: Easily navigate between views and insights.
-7. elected Filters Counter: Filter button dynamically updates to show the number of applied filters.
+## Folder Notes
+- **`Dashboard Images/`**: Screenshots of individual functional dashboard pages, including the landing page and data model.
+- **Documentation (`.pdf`, `.txt`)**: Information covering the project problem statement, data schema `Meta Data.txt`, table descriptions, and scripts intended for presentations.
+- **Presentation**: A corresponding `.pptx` slide deck summarizing key insights and business strategies.
